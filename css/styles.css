@@ -31,10 +31,10 @@ body {
   margin-top: 15vh; }
 
 h1, p {
-  color: white;
   text-align: center; }
 
 h1 {
+  color: white;
   font-size: 100px;
   font-weight: 400;
   letter-spacing: 15px;
@@ -43,12 +43,14 @@ h1 {
     font-weight: 700; }
 
 p.sub-heading {
+  color: white;
   font-size: 40px;
   letter-spacing: 40px;
   opacity: 0.5;
   margin-bottom: 3vh; }
 
 p.disc {
+  color: white;
   margin: 0 auto;
   font-size: 30px;
   width: 80%;
@@ -74,3 +76,57 @@ a.contact {
   background: white;
   color: #010312;
   box-shadow: 0 12px 10px -10px rgba(255, 255, 255, 0.5); }
+
+.skill {
+  padding: 5vh 0;
+  height: 100vh; }
+
+#title {
+  margin-bottom: 8vh;
+  height: 100px; }
+  #title img {
+    display: block;
+    height: 100px;
+    margin: 0vh auto; }
+
+#cont {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 300px 300px;
+  justify-items: center;
+  grid-gap: 6vh 2vh;
+  grid-template-areas: "design-image design-content" "dev-content dev-image"; }
+
+.lft-top {
+  grid-area: design-image; }
+
+.rgt-top {
+  padding: 10px;
+  grid-area: design-content; }
+  .rgt-top p {
+    margin-bottom: 3vh;
+    line-height: 3vh;
+    text-align: justify; }
+  .rgt-top .design-icons {
+    margin-top: 8vh; }
+
+.sub-topic {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  padding-bottom: 2vh; }
+
+.lft-btm {
+  padding: 10px;
+  grid-area: dev-content; }
+  .lft-btm .sub-topic {
+    width: 100%; }
+  .lft-btm p {
+    margin-bottom: 3vh;
+    line-height: 3vh;
+    text-align: justify; }
+  .lft-btm .dev-icons {
+    margin-top: 8vh; }
+
+.rgt-btm {
+  grid-area: dev-image; }
