@@ -102,6 +102,7 @@ a.contact
 .skill
     padding: 5vh 0
     height: 100vh
+    // margin-top: 8vh
 
     
 #title
@@ -163,4 +164,193 @@ a.contact
         margin-top: 8vh
 
 .rgt-btm
-    grid-area: dev-image   
+    grid-area: dev-image  
+
+
+.works
+    height: 100vh
+    padding: 5vh 0
+    background-image: linear-gradient(to right bottom, #ffb900, #ffa90e, #ff981b, #ff8726, #ff7730)
+    
+    .section-title
+        // background: lime
+        display: block
+        height: 100px
+        margin: 0 auto
+
+    .card
+        margin: 8vh 0
+        padding: 2vh
+        display: grid
+        grid-template-areas: "exam book chatbot"
+        grid-template-columns: 1fr 1fr 1fr
+        grid-column-gap: 3vh
+        // background: lime
+        width: 100%
+        height: 50vh
+
+        .card1,.card2,.card3
+            // width: 20vw
+            background: white
+            border-radius: 2vh 0
+            -webkit-box-shadow: 10px 12px 21px -9px rgba(0,0,0,0.75)
+            -moz-box-shadow: 10px 12px 21px -9px rgba(0,0,0,0.75)
+            box-shadow: 10px 12px 21px -9px rgba(0,0,0,0.75)
+            // border-bottom: 1vh solid lime
+            img
+                width: 100%
+                height: 30vh
+                // transform: translate(-2vh, -2vh)
+                border-radius: 2vh 0 0 0
+                
+            
+            h3
+                margin: 1vh 3vh
+                font-size: 2vh
+
+            p
+                text-align: left
+                margin: 0vh 3vh
+
+            
+            
+
+        .card1
+            border-bottom: 1vh solid #2980b9
+            a
+                text-decoration: none
+                color: #2980b9
+                font-size: 1.2vh
+                font-weight: 700
+                display: inline-block
+                margin: 2vh 3vh
+                
+
+        .card2
+            border-bottom: 1vh solid #c0392b
+            a
+                text-decoration: none
+                color: #c0392b
+                font-size: 1.2vh
+                font-weight: 700
+                display: inline-block
+                margin: 2vh 3vh
+                
+
+        .card3
+            border-bottom: 1vh solid #2c3e50
+            a
+                text-decoration: none
+                color: #2c3e50
+                font-size: 1.2vh
+                font-weight: 700
+                display: inline-block
+                margin: 2vh 3vh
+.contactpg
+    background-image: linear-gradient(to right bottom, #f6f6f6, #ededed, #e5e5e5, #dcdcdc, #d4d4d4)
+    height: 95vh
+    padding: 5vh 0
+    .section-title
+        // background: lime
+        display: block
+        height: 100px
+        margin: 0 auto
+     
+.main-grid
+    display: inline-grid
+    // background: #F1F1F2
+    grid-template-areas: "right left"
+    grid-template-columns: 1fr 1fr
+    width: 60vw
+    height: 60vh
+    margin-top: 8vh
+    .rgt-grid
+        display: block
+        // margin-left: auto
+        // margin-right: auto
+        // background: lime
+        padding: 4vh 4vh
+        line-height: 3vh
+        width: 100%
+        
+        h4
+            font-size: 4.0vh
+            text-align: center
+            margin-bottom: 3vh
+        form>[for="fname"],
+        form>[for="email"],
+        form>[for="Pnum"],
+        form>[for="mess"]
+            font-size: 1.5vh
+            display: block
+            text-align: center
+
+        form>[id="fname"],
+        form>[id="email"],
+        form>[id="Pnum"],
+        form>[id="mess"]
+            display: block
+            border: none
+            border-bottom: 1px solid #2C2C2C
+            margin-left: auto
+            margin-right: auto
+            // background: #00AC7A
+            height: 4vh
+            font-size: 1.5vh
+            background: none
+            width: 80%
+            // padding:  15px
+            margin-bottom: 3vh
+            outline: none
+            resize: none
+            
+
+        a
+            text-decoration: none
+            background: #76B1D3
+            color: #010312
+            box-shadow: 0 12px 10px -10px rgba(255,255,255,0.5)
+            display: block
+            width: 20vh
+            text-align: center
+            text-decoration: none
+            border-radius: 4px
+            padding: 0.6vh 1.5vh
+            border-radius: 40px
+            font-weight: 700
+            text-transform: uppercase
+            margin: 0 auto
+
+
+    .lft-grid
+        background: url("../images/mail.svg") no-repeat
+        // background-size: 80%
+        // border: 1px solid red
+
+
+        
+        
+        .inner-box
+            margin-top: 25%
+            line-height: 6vh
+            // background: lime
+            text-align: left
+            width: 50%
+            margin-left: auto
+            margin-right: auto
+        h4
+            font-size: 2.0vh
+        p
+            text-align: left
+            color: white
+
+footer
+    height: 5vh
+    background: #212330
+    color: white
+    p
+        padding: 1.2vh 0
+
+    
+        
+        
