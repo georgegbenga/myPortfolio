@@ -5,6 +5,7 @@
 
 html
     box-sizing: border-box
+    // overflow-x: hidden
 
 
 *,
@@ -23,6 +24,7 @@ body
     -webkit-font-smoothing: antialiased
     -webkit-text-size-adjust: 100%
     font-family: 'Montserrat', sans-serif
+    overflow-x: hidden
 
 
 .wrapper
@@ -34,15 +36,34 @@ body
     background: url("../images/bckgd.png") no-repeat
     background-size: cover
     height: 100vh
+    width: 100vw
+    overflow: hidden
+     
+        
+
+
+        height: 100vh
+     
 
 
 .content
-    margin-top: 15vh
     // background: red
+    animation: 2s slidefadein 0.5s forwards
+    opacity: 0
+    margin-top: 40vh
+    
+
+
+@keyframes slidefadein
+    100%
+        opacity: 1
+        margin-top: 10vh
+        // @media (max-width: 480px)
 
 h1,p
     // color: white
     text-align: center
+    
 
 h1
     color: white
@@ -52,6 +73,11 @@ h1
     margin-bottom: 3vh
     span
         font-weight: 700
+    @media (max-width: 600px)
+        font-size: 22px
+        font-weight: 400
+        letter-spacing: 7px
+        margin-bottom: 5vh
         
 
 p.sub-heading
@@ -60,6 +86,10 @@ p.sub-heading
     letter-spacing: 40px
     opacity: 0.5
     margin-bottom: 3vh
+    @media (max-width: 600px)
+        font-size: 16px
+        font-weight: 400
+        letter-spacing: 7px
 
 p.disc
     color: white
@@ -68,10 +98,18 @@ p.disc
     width: 80%
     letter-spacing: 2px
     // background: red
+    @media (max-width: 600px)
+        font-size: 10px
+        font-weight: 400
+        letter-spacing: 3px
+    
 
 .main-nav
     display: flex
     padding-top: 40px
+    // background: lime
+    
+    
 
 
     li
@@ -88,9 +126,16 @@ p.disc
         // margin-left: 20px
         font-weight: 700
         text-transform: uppercase
+
+
     
     li:first-child
         margin-right: auto
+        svg
+            @media (max-width: 600px)
+                width: 60px
+
+           
 
 a.contact
     background: white
@@ -101,45 +146,94 @@ a.contact
 
 .skill
     padding: 5vh 0
-    height: 100vh
+    // height: 100vh
     // margin-top: 8vh
+    @media (max-width: 600px)
+        padding: 20px 0
 
     
 #title
     // background: lime
     margin-bottom: 8vh
-    height: 100px
+    height: 50px
+    
     img
         display: block
         height: 100px
         margin: 0vh auto
+        @media (min-width: 320px) and (max-width: 479px)
+            height: 50px
+        @media (min-width: 480px) and (max-width: 600px)
+            height: 70px
 
 #cont
     // background: yellow
     display: inline-grid
     grid-template-columns: 1fr 1fr 
-    grid-template-rows: 300px 300px
+    grid-template-rows: auto auto
     justify-items: center
     grid-gap: 6vh 2vh
     grid-template-areas: "design-image design-content""dev-content dev-image"
-    
+    @media (min-width: 320px) and (max-width: 479px)
+        margin: 0 auto
+        // padding: 5px 5px
+        // justify-items: left
+        grid-template-columns: 320px
+        grid-template-rows: auto auto auto auto
+        // grid-gap: 0 0
+        grid-template-areas: "design-image" "design-content""dev-image""dev-content" 
+    @media (min-width: 480px) and (max-width: 600px)
+        margin: 0 auto
+        // padding: 5px 5px
+        // justify-items: left
+        grid-template-columns: 480px
+        grid-template-rows: auto auto auto auto
+        // grid-gap: 0 0
+        grid-template-areas: "design-image" "design-content""dev-image""dev-content"
 
 
 .lft-top
     grid-area: design-image
+    // background: orange
+    @media (min-width: 320px) and (max-width: 479px)
+        // background: lime
+        
+        img
+            width: 80vw
+            justify-content: center
+            margin-bottom: 20px
 
 .rgt-top
-    padding: 10px
+    padding: 20px
     // background: lime
     grid-area: design-content
     p
-        
-        margin-bottom: 3vh
+        // background: lime
+        margin-bottom: 1vh
         line-height: 3vh
         text-align: justify
+        @media (min-width: 320px) and (max-width: 479px)
+            // padding: 5px 20px
+            line-height: 4vh
+
+        @media (min-width: 480px) and (max-width: 600px)
+            line-height: 6vh
 
     .design-icons
-        margin-top: 8vh
+        margin-top: 3vh
+        
+        @media (min-width: 320px) and (max-width: 479px)
+            img
+                // background: lime
+                margin-top: 2vh
+                width: 70vw
+                margin-bottom: 20px
+        @media (min-width: 480px) and (max-width: 600px)
+            img
+                // background: lime
+                margin-top: 2vh
+                width: 70vw
+                margin-bottom: 20px
         
     
 .sub-topic
@@ -151,7 +245,7 @@ a.contact
     
 .lft-btm
     // background: yellow
-    padding: 10px
+    padding: 20px
     grid-area: dev-content 
     .sub-topic
         width: 100%
@@ -159,24 +253,66 @@ a.contact
         margin-bottom: 3vh
         line-height: 3vh
         text-align: justify
+        @media (min-width: 320px) and (max-width: 479px)
+            // padding: 5px 20px
+            line-height: 4vh
+
+        @media (min-width: 480px) and (max-width: 600px)
+            line-height: 6vh
 
     .dev-icons
         margin-top: 8vh
+        @media (min-width: 320px) and (max-width: 479px)
+            img
+                // background: lime
+                margin-top: 2vh
+                width: 70vw
+                margin-bottom: 10px
+
+        @media (min-width: 480px) and (max-width: 600px)
+            img
+                // background: lime
+                margin-top: 2vh
+                width: 70vw
+                margin-bottom: 10px
 
 .rgt-btm
     grid-area: dev-image  
+    @media (min-width: 320px) and (max-width: 479px)
+        // background: lime
+        img
+            width: 80vw
+            justify-content: center
+            margin-bottom: 20px
+    @media (min-width: 480px) and (max-width: 600px)
+        img
+            width: 80vw
+            justify-content: center
+            margin-bottom: 20px
+
 
 
 .works
-    height: 100vh
+    // height: 100vh
+    // width: 100vw
     padding: 5vh 0
     background-image: linear-gradient(to right bottom, #ffb900, #ffa90e, #ff981b, #ff8726, #ff7730)
+    @media (min-width: 320px) and (max-width: 479px)
+        // height: 50px
+        padding: 20px 0
+    @media (min-width: 480px) and (max-width: 600px)
+        padding: 20px 0
     
     .section-title
         // background: lime
         display: block
         height: 100px
         margin: 0 auto
+        @media (min-width: 320px) and (max-width: 479px)
+            height: 50px
+
+        @media (min-width: 480px) and (max-width: 600px)
+            height: 70px
 
     .card
         margin: 8vh 0
@@ -187,16 +323,38 @@ a.contact
         grid-column-gap: 3vh
         // background: lime
         width: 100%
-        height: 50vh
+        // height: 50vh
+        @media (min-width: 320px) and (max-width: 479px)
+            margin: 2vh 1vh
+            grid-template-areas: "exam" "book" "chatbot"
+            grid-template-columns: 320px
+            grid-template-rows: auto auto auto
+            grid-column-gap: 3vh
+            padding: 20px 0
+
+        @media (min-width: 480px) and (max-width: 600px)
+            margin: 2vh 1vh
+            grid-template-areas: "exam" "book" "chatbot"
+            grid-template-columns: 480px
+            grid-template-rows: auto auto auto
+            // grid-column-gap: 3vh
+            padding: 20px 0
+            
+
 
         .card1,.card2,.card3
             // width: 20vw
+
             background: white
             border-radius: 2vh 0
             -webkit-box-shadow: 10px 12px 21px -9px rgba(0,0,0,0.75)
             -moz-box-shadow: 10px 12px 21px -9px rgba(0,0,0,0.75)
             box-shadow: 10px 12px 21px -9px rgba(0,0,0,0.75)
             // border-bottom: 1vh solid lime
+            @media (min-width: 320px) and (max-width: 479px)
+                width: 240px
+                margin-bottom: 20px
+                justify-self: center
             img
                 width: 100%
                 height: 30vh
@@ -211,6 +369,11 @@ a.contact
             p
                 text-align: left
                 margin: 0vh 3vh
+
+            @media (min-width: 480px) and (max-width: 600px)
+                width: 240px
+                margin-bottom: 20px
+                justify-self: center
 
             
             
@@ -248,22 +411,33 @@ a.contact
                 margin: 2vh 3vh
 .contactpg
     background-image: linear-gradient(to right bottom, #f6f6f6, #ededed, #e5e5e5, #dcdcdc, #d4d4d4)
-    height: 95vh
+    // height: 95vh
     padding: 5vh 0
     .section-title
         // background: lime
         display: block
         height: 100px
         margin: 0 auto
-     
+        @media (min-width: 320px) and (max-width: 479px)
+            height: 50px
+        @media (min-width: 480px) and (max-width: 600px)
+            height: 70px
 .main-grid
     display: inline-grid
-    // background: #F1F1F2
+    // background: lime
     grid-template-areas: "right left"
     grid-template-columns: 1fr 1fr
     width: 60vw
     height: 60vh
     margin-top: 8vh
+    @media (min-width: 320px) and (max-width: 479px)
+        grid-template-areas: "left"
+        grid-template-columns: 320px
+    @media (min-width: 480px) and (max-width: 600px)
+        grid-template-areas: "left"
+        grid-template-columns: 480px
+        margin-top: 4vh
+
     .rgt-grid
         display: block
         // margin-left: auto
@@ -272,6 +446,7 @@ a.contact
         padding: 4vh 4vh
         line-height: 3vh
         width: 100%
+            
         
         h4
             font-size: 4.0vh
@@ -319,12 +494,27 @@ a.contact
             font-weight: 700
             text-transform: uppercase
             margin: 0 auto
+            @media (min-width: 320px) and (max-width: 479px)
+                margin-top: 30px
+                font-size: 10px
+            @media (min-width: 480px) and (max-width: 600px)
+                margin-top: 20px
+                font-size: 10px
+                width: 30vh
+                padding: 1.2vw 1.5vw
 
 
     .lft-grid
         background: url("../images/mail.svg") no-repeat
         // background-size: 80%
         // border: 1px solid red
+        @media (min-width: 320px) and (max-width: 479px)
+            visibility: hidden
+            height: 0
+        @media (min-width: 480px) and (max-width: 600px)
+            visibility: hidden
+            height: 0
+
 
 
         
@@ -349,6 +539,11 @@ footer
     color: white
     p
         padding: 1.2vh 0
+        @media (min-width: 320px) and (max-width: 479px)
+            // padding: 1.2vh 0
+            font-size: 8px
+        @media (min-width: 480px) and (max-width: 600px)
+            font-size: 8px
 
     
         

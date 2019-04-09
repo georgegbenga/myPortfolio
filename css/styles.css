@@ -15,7 +15,8 @@ body {
   color: black;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
-  font-family: 'Montserrat', sans-serif; }
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden; }
 
 .wrapper {
   width: 100%;
@@ -25,10 +26,20 @@ body {
 #header {
   background: url("../images/bckgd.png") no-repeat;
   background-size: cover;
-  height: 100vh; }
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+    overflow-height: 100vh; }
 
 .content {
-  margin-top: 15vh; }
+  animation: 2s slidefadein 0.5s forwards;
+  opacity: 0;
+  margin-top: 40vh; }
+
+@keyframes slidefadein {
+  100% {
+    opacity: 1;
+    margin-top: 10vh; } }
 
 h1, p {
   text-align: center; }
@@ -41,6 +52,12 @@ h1 {
   margin-bottom: 3vh; }
   h1 span {
     font-weight: 700; }
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: 7px;
+      margin-bottom: 5vh; } }
 
 p.sub-heading {
   color: white;
@@ -48,6 +65,11 @@ p.sub-heading {
   letter-spacing: 40px;
   opacity: 0.5;
   margin-bottom: 3vh; }
+  @media (max-width: 600px) {
+    p.sub-heading {
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 7px; } }
 
 p.disc {
   color: white;
@@ -55,6 +77,11 @@ p.disc {
   font-size: 30px;
   width: 80%;
   letter-spacing: 2px; }
+  @media (max-width: 600px) {
+    p.disc {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 3px; } }
 
 .main-nav {
   display: flex;
@@ -71,6 +98,9 @@ p.disc {
     text-transform: uppercase; }
   .main-nav li:first-child {
     margin-right: auto; }
+    @media (max-width: 600px) {
+      .main-nav li:first-child svg {
+        width: 60px; } }
 
 a.contact {
   background: white;
@@ -78,37 +108,78 @@ a.contact {
   box-shadow: 0 12px 10px -10px rgba(255, 255, 255, 0.5); }
 
 .skill {
-  padding: 5vh 0;
-  height: 100vh; }
+  padding: 5vh 0; }
+  @media (max-width: 600px) {
+    .skill {
+      padding: 20px 0; } }
 
 #title {
   margin-bottom: 8vh;
-  height: 100px; }
+  height: 50px; }
   #title img {
     display: block;
     height: 100px;
     margin: 0vh auto; }
+    @media (min-width: 320px) and (max-width: 479px) {
+      #title img {
+        height: 50px; } }
+    @media (min-width: 480px) and (max-width: 600px) {
+      #title img {
+        height: 70px; } }
 
 #cont {
   display: inline-grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 300px 300px;
+  grid-template-rows: auto auto;
   justify-items: center;
   grid-gap: 6vh 2vh;
   grid-template-areas: "design-image design-content" "dev-content dev-image"; }
+  @media (min-width: 320px) and (max-width: 479px) {
+    #cont {
+      margin: 0 auto;
+      grid-template-columns: 320px;
+      grid-template-rows: auto auto auto auto;
+      grid-template-areas: "design-image" "design-content" "dev-image" "dev-content"; } }
+  @media (min-width: 480px) and (max-width: 600px) {
+    #cont {
+      margin: 0 auto;
+      grid-template-columns: 480px;
+      grid-template-rows: auto auto auto auto;
+      grid-template-areas: "design-image" "design-content" "dev-image" "dev-content"; } }
 
 .lft-top {
   grid-area: design-image; }
+  @media (min-width: 320px) and (max-width: 479px) {
+    .lft-top img {
+      width: 80vw;
+      justify-content: center;
+      margin-bottom: 20px; } }
 
 .rgt-top {
-  padding: 10px;
+  padding: 20px;
   grid-area: design-content; }
   .rgt-top p {
-    margin-bottom: 3vh;
+    margin-bottom: 1vh;
     line-height: 3vh;
     text-align: justify; }
+    @media (min-width: 320px) and (max-width: 479px) {
+      .rgt-top p {
+        line-height: 4vh; } }
+    @media (min-width: 480px) and (max-width: 600px) {
+      .rgt-top p {
+        line-height: 6vh; } }
   .rgt-top .design-icons {
-    margin-top: 8vh; }
+    margin-top: 3vh; }
+    @media (min-width: 320px) and (max-width: 479px) {
+      .rgt-top .design-icons img {
+        margin-top: 2vh;
+        width: 70vw;
+        margin-bottom: 20px; } }
+    @media (min-width: 480px) and (max-width: 600px) {
+      .rgt-top .design-icons img {
+        margin-top: 2vh;
+        width: 70vw;
+        margin-bottom: 20px; } }
 
 .sub-topic {
   display: block;
@@ -117,7 +188,7 @@ a.contact {
   padding-bottom: 2vh; }
 
 .lft-btm {
-  padding: 10px;
+  padding: 20px;
   grid-area: dev-content; }
   .lft-btm .sub-topic {
     width: 100%; }
@@ -125,20 +196,57 @@ a.contact {
     margin-bottom: 3vh;
     line-height: 3vh;
     text-align: justify; }
+    @media (min-width: 320px) and (max-width: 479px) {
+      .lft-btm p {
+        line-height: 4vh; } }
+    @media (min-width: 480px) and (max-width: 600px) {
+      .lft-btm p {
+        line-height: 6vh; } }
   .lft-btm .dev-icons {
     margin-top: 8vh; }
+    @media (min-width: 320px) and (max-width: 479px) {
+      .lft-btm .dev-icons img {
+        margin-top: 2vh;
+        width: 70vw;
+        margin-bottom: 10px; } }
+    @media (min-width: 480px) and (max-width: 600px) {
+      .lft-btm .dev-icons img {
+        margin-top: 2vh;
+        width: 70vw;
+        margin-bottom: 10px; } }
 
 .rgt-btm {
   grid-area: dev-image; }
+  @media (min-width: 320px) and (max-width: 479px) {
+    .rgt-btm img {
+      width: 80vw;
+      justify-content: center;
+      margin-bottom: 20px; } }
+  @media (min-width: 480px) and (max-width: 600px) {
+    .rgt-btm img {
+      width: 80vw;
+      justify-content: center;
+      margin-bottom: 20px; } }
 
 .works {
-  height: 100vh;
   padding: 5vh 0;
   background-image: linear-gradient(to right bottom, #ffb900, #ffa90e, #ff981b, #ff8726, #ff7730); }
+  @media (min-width: 320px) and (max-width: 479px) {
+    .works {
+      padding: 20px 0; } }
+  @media (min-width: 480px) and (max-width: 600px) {
+    .works {
+      padding: 20px 0; } }
   .works .section-title {
     display: block;
     height: 100px;
     margin: 0 auto; }
+    @media (min-width: 320px) and (max-width: 479px) {
+      .works .section-title {
+        height: 50px; } }
+    @media (min-width: 480px) and (max-width: 600px) {
+      .works .section-title {
+        height: 70px; } }
   .works .card {
     margin: 8vh 0;
     padding: 2vh;
@@ -146,14 +254,33 @@ a.contact {
     grid-template-areas: "exam book chatbot";
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 3vh;
-    width: 100%;
-    height: 50vh; }
+    width: 100%; }
+    @media (min-width: 320px) and (max-width: 479px) {
+      .works .card {
+        margin: 2vh 1vh;
+        grid-template-areas: "exam" "book" "chatbot";
+        grid-template-columns: 320px;
+        grid-template-rows: auto auto auto;
+        grid-column-gap: 3vh;
+        padding: 20px 0; } }
+    @media (min-width: 480px) and (max-width: 600px) {
+      .works .card {
+        margin: 2vh 1vh;
+        grid-template-areas: "exam" "book" "chatbot";
+        grid-template-columns: 480px;
+        grid-template-rows: auto auto auto;
+        padding: 20px 0; } }
     .works .card .card1, .works .card .card2, .works .card .card3 {
       background: white;
       border-radius: 2vh 0;
       -webkit-box-shadow: 10px 12px 21px -9px rgba(0, 0, 0, 0.75);
       -moz-box-shadow: 10px 12px 21px -9px rgba(0, 0, 0, 0.75);
       box-shadow: 10px 12px 21px -9px rgba(0, 0, 0, 0.75); }
+      @media (min-width: 320px) and (max-width: 479px) {
+        .works .card .card1, .works .card .card2, .works .card .card3 {
+          width: 240px;
+          margin-bottom: 20px;
+          justify-self: center; } }
       .works .card .card1 img, .works .card .card2 img, .works .card .card3 img {
         width: 100%;
         height: 30vh;
@@ -164,6 +291,11 @@ a.contact {
       .works .card .card1 p, .works .card .card2 p, .works .card .card3 p {
         text-align: left;
         margin: 0vh 3vh; }
+      @media (min-width: 480px) and (max-width: 600px) {
+        .works .card .card1, .works .card .card2, .works .card .card3 {
+          width: 240px;
+          margin-bottom: 20px;
+          justify-self: center; } }
     .works .card .card1 {
       border-bottom: 1vh solid #2980b9; }
       .works .card .card1 a {
@@ -194,12 +326,17 @@ a.contact {
 
 .contactpg {
   background-image: linear-gradient(to right bottom, #f6f6f6, #ededed, #e5e5e5, #dcdcdc, #d4d4d4);
-  height: 95vh;
   padding: 5vh 0; }
   .contactpg .section-title {
     display: block;
     height: 100px;
     margin: 0 auto; }
+    @media (min-width: 320px) and (max-width: 479px) {
+      .contactpg .section-title {
+        height: 50px; } }
+    @media (min-width: 480px) and (max-width: 600px) {
+      .contactpg .section-title {
+        height: 70px; } }
 
 .main-grid {
   display: inline-grid;
@@ -208,6 +345,15 @@ a.contact {
   width: 60vw;
   height: 60vh;
   margin-top: 8vh; }
+  @media (min-width: 320px) and (max-width: 479px) {
+    .main-grid {
+      grid-template-areas: "left";
+      grid-template-columns: 320px; } }
+  @media (min-width: 480px) and (max-width: 600px) {
+    .main-grid {
+      grid-template-areas: "left";
+      grid-template-columns: 480px;
+      margin-top: 4vh; } }
   .main-grid .rgt-grid {
     display: block;
     padding: 4vh 4vh;
@@ -254,8 +400,26 @@ a.contact {
       font-weight: 700;
       text-transform: uppercase;
       margin: 0 auto; }
+      @media (min-width: 320px) and (max-width: 479px) {
+        .main-grid .rgt-grid a {
+          margin-top: 30px;
+          font-size: 10px; } }
+      @media (min-width: 480px) and (max-width: 600px) {
+        .main-grid .rgt-grid a {
+          margin-top: 20px;
+          font-size: 10px;
+          width: 30vh;
+          padding: 1.2vw 1.5vw; } }
   .main-grid .lft-grid {
     background: url("../images/mail.svg") no-repeat; }
+    @media (min-width: 320px) and (max-width: 479px) {
+      .main-grid .lft-grid {
+        visibility: hidden;
+        height: 0; } }
+    @media (min-width: 480px) and (max-width: 600px) {
+      .main-grid .lft-grid {
+        visibility: hidden;
+        height: 0; } }
     .main-grid .lft-grid .inner-box {
       margin-top: 25%;
       line-height: 6vh;
@@ -275,3 +439,9 @@ footer {
   color: white; }
   footer p {
     padding: 1.2vh 0; }
+    @media (min-width: 320px) and (max-width: 479px) {
+      footer p {
+        font-size: 8px; } }
+    @media (min-width: 480px) and (max-width: 600px) {
+      footer p {
+        font-size: 8px; } }
